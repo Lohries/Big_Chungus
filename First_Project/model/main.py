@@ -1,8 +1,10 @@
 from deepface import DeepFace
-from 
+from Cam import taking_photo
+
 
 def register():
-    result_register = 
+    result_register = taking_photo()
+    return result_register
 
 def analyse():
     pass
