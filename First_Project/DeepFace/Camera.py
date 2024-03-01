@@ -1,14 +1,29 @@
 import cv2 as cv
 
 
-capture = cv.VideoCapture(0)
 
-while capture is open:
-    sucess, frame = cv.imread(capture)
-    cv.imshow("Photo", frame)
-    if cv.waitKey(1) & 0xFF == ord('q'):
-        cv.imwrite('img/img1.jpeg', frame)
-        break
+def extraction():
+    capture = cv.VideoCapture(0)
+
+    while True:
+
+        success, frame = capture.read()
+        
+
+        if not success:
+            print("Erro ao ler o frame")
+            print("Tente novamente")
+            break
+        
     
-cv.destroyAllWindows()
-capture.release()
+        cv.imshow("Photo", frame)
+        
+
+        key = cv.waitKey(1)
+        if key == ord('q'):
+            cv.imwrite('img/Capture_Images/img1.jpeg', frame) #Now we need to integrate with a database later on
+            break
+
+    cv.destroyAllWindows()
+    capture.release()
+    return frame
