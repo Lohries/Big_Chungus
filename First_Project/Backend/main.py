@@ -18,27 +18,21 @@ app.add_middleware(
 )
 
 @app.get("/")
-def read_root():
+def root():
     return {"message": "Hello, world!"}
 
 
-@app.get("/api/todo")
-async def get_todo():
-    return 1
-
-@app.get("/api/todo{id}")
-async def get_todo_by_id(id):
-    return 1
+@app.post("/api/storing")
+def storing():
+    pass
 
 
-@app.post("/api/todo")
-async def post_todo(todo):
-    return 1
+@app.post("/api/finding")
+def finding():
+    pass
 
-@app.put("/api/todo{id}")
-async def put_todo(id,  data):
-    return 1
 
-@app.delete("/api/todo{id}")
-async def delete_todo(todo):
-    return 1
+
+@app.post("/api/analisar")
+def analisar():
+    pass
