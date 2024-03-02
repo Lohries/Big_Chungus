@@ -1,6 +1,9 @@
+import styles from './Botao.module.css'
+
+
 function Botao_Find() {
     return (
-        <div>
+        <div className={styles.BotaoContainer}>
             <button>Find</button>
         </div>
     )
