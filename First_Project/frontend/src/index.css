@@ -15,7 +15,30 @@ h1 {
 
 }
 
+button {
+  margin: 10px; 
+  background-color: rgb(0, 158, 158);
+  border: none;
+  border-radius: 8px; 
+  padding: 15px 30px; 
+  color: white; 
+  font-size: 16px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: rgb(0, 138, 138); /* Alterei ligeiramente a cor de fundo ao passar o mouse para fornecer feedback visual */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+   monospace;
+}
+footer {
+  background-color: #000000; 
+  color: white;
+  padding: 20px; 
+  text-align: center; 
 }
