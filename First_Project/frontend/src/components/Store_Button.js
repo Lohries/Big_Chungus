@@ -1,7 +1,8 @@
+import styles from './Button.module.css'
 function Store () {
     return (
         <section>
-            <button>Store</button>
+            <button className={styles.button}>Store</button>
         </section>
     )
 

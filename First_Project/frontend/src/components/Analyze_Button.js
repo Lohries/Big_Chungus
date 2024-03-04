@@ -1,7 +1,9 @@
+import styles from './Button.module.css'
+
 function Analyze () {
    return (
         <section>
-            <button>Analyze</button>
+            <button className={styles.button}>Analyze</button>
         </section>
    )
     

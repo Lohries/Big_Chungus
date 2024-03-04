@@ -1,0 +1,28 @@
+footer {
+    background-color: #222; 
+    color: white;
+    padding: 20px; 
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    display: flex;
+    width: 100%;
+  
+    
+}
+
+
+.left_image {
+    width: 150px; 
+    height: auto; 
+    margin: 10px; 
+    padding: 10px;
+
+}
+
+.right_image {
+    width: 150px; 
+    height: auto; 
+    margin: 10px; 
+    padding: 10px;
+}
