@@ -1,6 +1,11 @@
+import Footer from "../Footer"
+import Header from "../Header"
 function Analyze_page() {
     return (
-        <p>hello</p>
+        <div>
+            <Header />
+            <Footer />
+        </div>
     )
 
 

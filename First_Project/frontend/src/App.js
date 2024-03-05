@@ -14,7 +14,6 @@ function App() {
     <Router>
       <div className="App">
         {/* <Link to="/"><button className={styles.button}></button></Link>*/}
-        <h1>Welcome</h1>
         <Link to="/store"><button className={styles.button}>Store</button></Link>
         <Link to="/find"><button className={styles.button}>Find</button></Link>
         <Link to="/analyze"><button className={styles.button}>Analyze</button></Link>

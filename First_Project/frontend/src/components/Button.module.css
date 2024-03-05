@@ -1,10 +1,10 @@
 
 button {
-    margin: 10px; 
+    margin: 5%; 
     background-color: rgb(0, 158, 158);
     border: none;
     border-radius: 8px; 
-    padding: 15px 30px; 
+    padding: 25px 50px; 
     color: white; 
     font-size: 16px; 
     font-weight: bold; 
@@ -14,5 +14,5 @@ button {
   
 button:hover {
     background-color: rgb(0, 138, 138);
-    transform: scale(1.05); /* Aumenta o tamanho do botão em 5% ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 5% ao passar o mouse */
 }

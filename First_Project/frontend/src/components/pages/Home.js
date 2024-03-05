@@ -1,13 +1,13 @@
 
 import Footer from '../Footer';
-
+import Header from '../Header'
 
 
 function Home () {
     return(
         
         <section>
-            <h1>Welcome</h1>
+            <Header />
 
             <Footer />
         </section>

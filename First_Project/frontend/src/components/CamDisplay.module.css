@@ -1,0 +1,10 @@
+.Display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 500px; /* Defina a largura da caixa conforme necessário */
+    height: 400px; /* Defina a altura da caixa conforme necessário */
+    border-radius: 8px;
+}
