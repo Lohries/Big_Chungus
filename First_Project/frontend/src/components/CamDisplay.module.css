@@ -1,3 +1,4 @@
+/* Para a caixa de input */
 .Display {
     position: fixed;
     top: 50%;
@@ -7,4 +8,17 @@
     width: 500px; /* Defina a largura da caixa conforme necessário */
     height: 400px; /* Defina a altura da caixa conforme necessário */
     border-radius: 8px;
+}
+
+/* Para a caixa de output */
+.Display_out {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    width: 500px; /* Defina a largura da caixa conforme necessário */
+    height: 400px; /* Defina a altura da caixa conforme necessário */
+    border-radius: 8px;
+    text-align: center;
 }
