@@ -1,5 +1,5 @@
 from deepface import DeepFace
-from Cam import extraction
+from First_Project.Model.Cam import extraction
 
 def storing():
    

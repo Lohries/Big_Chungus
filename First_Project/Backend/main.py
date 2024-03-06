@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Especifique o host como uma lista de origens permitidas
+
 hosts = [
-    "https://localhost:8000"  # Você pode adicionar outras origens conforme necessário
+    "https://localhost:8000" 
 ]
 
 
