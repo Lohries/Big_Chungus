@@ -30,30 +30,38 @@ def analyze():
     pass
 
 
-def find(frame_f):
-    results = DeepFace.find(frame_f)
-    return results
+def find(frame_f, cursor):
+    SQL_statement = "SELECT Photo FROM Images"
+    cursor.execute(SQL_statement)
+    results = cursor.fetchall()
+
+    for result in results:
+        img_data = result[0]
+        with open("temp.jpg", "wb") as file:
+            file.write(img_data)
+        frame = cv.imread("temp.jpg")
+        if DeepFace.verify(frame_f, frame)["verified"]:
+            return True
+    return False
 
 
-def Upload_File(frame_UF, cursor, Data_Base):
+def upload_file(frame_UF, cursor, Data_Base):
     cv.imwrite(f"img/img{i}.jpg", frame_UF)
     with open(frame_UF, "rb") as file:
-        Binary_data = file.read()
-    SQL_insert = "INSERT INTO Images (Photo) VALUES (%s)"
-    cursor.execute(SQL_insert, (Binary_data,))
+        binary_data = file.read()
+    SQL_statement = "INSERT INTO Images (Photo) VALUES (%s)"
+    cursor.execute(SQL_statement, (binary_data,))
     Data_Base.commit()
 
 
-
-
-Data_Base = mysql.connector.connect(
+data_base = mysql.connector.connect(
     host="localhost",
     user="Lohries",
     password="xxx",
     database="Brain-Project"
 )
 
-cursor = Data_Base.cursor()
+cursor = data_base.cursor()
 
 query = """
     CREATE TABLE IF NOT EXISTS Images (
@@ -69,13 +77,18 @@ while True:
     control_flow = input("Select what to do (1)-Store (2)-Find (3)-Analyze): ")
     if int(control_flow) == 1:
         frame_CF = extraction(i)
-        Upload_File(frame_CF, cursor, Data_Base)
+        upload_file(frame_CF, cursor, data_base)
         i += 1
+
     elif int(control_flow) == 2:
         frame_CF = extraction(i)
-        cv.imwrite(f"img/img{i}.jpg", frame_CF)
-        find(frame_CF)
+        if find(frame_CF, cursor):
+            print("Found matching image")
+        else:
+            print("No matching image found")
+
     elif int(control_flow) == 3:
         analyze()
+
     else:
         break
