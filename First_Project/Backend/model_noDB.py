@@ -32,8 +32,20 @@ while True:
         frame_CF = extraction(i)
         i += 1
         cv.imwrite(f"img/img{i}.jpg", frame_CF)
-      
-     
+
+
+    if int(control_flow) == 2:
+        frame_CF = extraction(i)
+        i += 1
+        cv.imwrite(f"img_find/img{i}.jpg", frame_CF)
+        results = DeepFace.find(img_path="img_analyze/", db_path="img/")
+        print(results)
+        for file in os.listdir("img_find/"):
+            if file.endswith('.jpg'):
+                os.remove(file)
+
+
+            
     elif int(control_flow) == 3:
         frame_CF = extraction(i)
         i += 1
