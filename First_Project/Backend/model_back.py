@@ -54,11 +54,14 @@ def upload_file(frame_UF, cursor, Data_Base):
     Data_Base.commit()
 
 
+
+
+
 data_base = mysql.connector.connect(
     host="localhost",
     user="Lohries",
-    password="xxx",
-    database="Brain-Project"
+    password="",
+    database="Brain_Project"
 )
 
 cursor = data_base.cursor()
