@@ -1,6 +1,8 @@
 import streamlit as st 
 import cv2 as cv
 
+import numpy as np
+
 
 def main():
     st.title("Brain Project - Second Part")
@@ -16,15 +18,16 @@ def main():
     elif slider >= 50:
         st.write("I'm suprised that you come so far")
 
+    image = st.camera_input("Camera Input")
+    if image:
+        
+    
+        
+        with open ('test.jpg','wb') as file:
+            file.write(image.getbuffer())
+ 
 
-
-
-    st.camera_input("Insert your image")
-
-    #cv.imwrite("img1.jpg", frame)
-
-    st.button("Insert")
-
+        st.button("Insert")
 
     with st.sidebar:
         st.header("Select the parameters that you like in your future love")
@@ -39,8 +42,6 @@ def main():
             st.write("Ok, peculiar tastes")
             feelings_1 = 'sad'
 
-
-
         feelings_2 = st.radio("Select the best age", ["Young (18<)", "Adults (30<)", "Sugar Daddy/Mummy (55<)"])
         if feelings_2 == "Young (18<)":
             st.write("Red flag")
@@ -51,7 +52,6 @@ def main():
         else:
             st.write("Are you interest in the money, aren't you ?")
             feelings_2 = 55
-
         
         feelings_3 = st.radio("Select the gender", ["Male", "Female", "Optimus Prime (Transformers)"])
         if feelings_3 == "Male":
@@ -60,7 +60,6 @@ def main():
         elif feelings_3 == "Female":
             st.write("The girls are waiting for you")
             feelings_3 = 'female'
-            
         else:
             st.write("Transformers is a good series")
             feelings_3 = 'Optimus Prime (Transformers)'
@@ -83,34 +82,10 @@ def main():
         else:
             feelings_4 = 'latino hispanic'
 
-        st.download_button("Click Here")
-
         st.header("Second method")
 
         st.text("Select your personal info and we gonna find your love in our DB")
         st.slider("Select your age", 5, 65)
 
-        st.radio("Select your self identify feelings")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     main()
-
-
