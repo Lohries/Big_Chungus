@@ -1,16 +1,18 @@
 import streamlit as st 
 import cv2 as cv
-
+from model_st import *
 import numpy as np
 
 
 def main():
+    image_increment = 0
+    mathcing = 0
     st.title("Brain Project - Second Part")
     st.header("The objective of this project is to complemente the studies arround deepface, like the real time functoinalities. That's why I created my version of the world wide famous Tinder.")
 
     st.text("Place your data if you want to make part of this big database")
-    st.text_input("Name")
-    slider = st.slider("Range of age", 5, 65)
+    x = st.text_input("Name")
+    y = slider = st.slider("Range of age", 5, 65)
     if slider <= 17:
         st.write("You are crazy dude, get out of that shit. You don't have the right age")
     elif slider >= 18 and slider < 50:
@@ -18,16 +20,19 @@ def main():
     elif slider >= 50:
         st.write("I'm suprised that you come so far")
 
-    image = st.camera_input("Camera Input")
+    if x and y:
+        image = st.camera_input("Camera Input")
+
     if image:
         
-    
-        
-        with open ('test.jpg','wb') as file:
-            file.write(image.getbuffer())
+        if st.button("Insert"):
+            image_increment += 1
+            with open (f'img/test{image_increment}.jpg','wb') as file:
+                file.write(image.getbuffer())
+
  
 
-        st.button("Insert")
+        
 
     with st.sidebar:
         st.header("Select the parameters that you like in your future love")
@@ -81,11 +86,18 @@ def main():
             feelings_4 = 'asian'
         else:
             feelings_4 = 'latino hispanic'
+        
 
-        st.header("Second method")
+        
+        list1 =  [feelings_1, feelings_2, feelings_3, feelings_4]
 
-        st.text("Select your personal info and we gonna find your love in our DB")
-        st.slider("Select your age", 5, 65)
+
+        if st.button("Submit"):
+            data_base_analyze(list1)
+        
+
+        
 
 if __name__ == "__main__":
+
     main()
