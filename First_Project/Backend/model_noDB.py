@@ -41,9 +41,9 @@ while True:
         frame_CF = extraction(i)
         i += 1
         cv.imwrite(f"img_find/img{i}.jpg", frame_CF)
-        results = DeepFace.find(img_path=f"img_find/img{i}.jpg", db_path="img/")
+        results = DeepFace.verify(f"img_find/img{i}.jpg", "img/img1.jpg")
         print(results)
-        os.remove(f'img_find/img{i}.jpg')
+
 
 
             
