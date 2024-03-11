@@ -23,12 +23,12 @@ def main():
     if x and y:
         image = st.camera_input("Camera Input")
 
-    if image:
-        
-        if st.button("Insert"):
-            image_increment += 1
-            with open (f'img/test{image_increment}.jpg','wb') as file:
-                file.write(image.getbuffer())
+        if image:
+            
+            if st.button("Insert"):
+                image_increment += 1
+                with open (f'img/test{image_increment}.jpg','wb') as file:
+                    file.write(image.getbuffer())
 
  
 
@@ -46,6 +46,7 @@ def main():
         else:
             st.write("Ok, peculiar tastes")
             feelings_1 = 'sad'
+        print(feelings_1)
 
         feelings_2 = st.radio("Select the best age", ["Young (18<)", "Adults (30<)", "Sugar Daddy/Mummy (55<)"])
         if feelings_2 == "Young (18<)":
@@ -57,6 +58,7 @@ def main():
         else:
             st.write("Are you interest in the money, aren't you ?")
             feelings_2 = 55
+        print(feelings_2)
         
         feelings_3 = st.radio("Select the gender", ["Male", "Female", "Optimus Prime (Transformers)"])
         if feelings_3 == "Male":
@@ -68,6 +70,7 @@ def main():
         else:
             st.write("Transformers is a good series")
             feelings_3 = 'Optimus Prime (Transformers)'
+        print(feelings_3)
 
         feelings_4 = st.radio("Select race", ["White", "Nigga", "Indian", "Middle East", "Asian", "Latino"])
         if feelings_4 == "White":
@@ -86,14 +89,19 @@ def main():
             feelings_4 = 'asian'
         else:
             feelings_4 = 'latino hispanic'
+
+        print(feelings_4)
         
 
-        
+
         list1 =  [feelings_1, feelings_2, feelings_3, feelings_4]
 
+        print(list1)
 
         if st.button("Submit"):
-            data_base_analyze(list1)
+            img_adress = data_base_analyze(list1)
+    
+            st.image(f'img/img{img_adress}.jpg')
         
 
         

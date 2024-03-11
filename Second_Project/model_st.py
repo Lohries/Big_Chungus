@@ -1,14 +1,11 @@
 from deepface import DeepFace
-import cv2 as cv
-import os 
-
+import os
 
 def data_base_analyze(data):
     directory = "img"
     lista2 = []
-    for i in enumerate(os.listdir(directory)):
-        
-        results = DeepFace.analyze(f"img/img{i+1}")
+    for i, file in enumerate(os.listdir(directory)):
+        results = DeepFace.analyze(f"img/img{i+1}.jpg")
         if results:
             print("Age: ", results[0]["age"])
             print("Gender: ", results[0]["gender"])
@@ -25,14 +22,7 @@ def data_base_analyze(data):
                 points += 1
             
             lista2.append(points)
-
-
-
-
-
-
-
-#def analyze_submit():
-    #pass
-
-
+            print(lista2)
+    big_matching = max(lista2)
+    index = lista2.index(big_matching)
+    return index

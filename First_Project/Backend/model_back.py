@@ -57,6 +57,7 @@ def upload_file(frame_UF, cursor, Data_Base):
 
 
 
+
 data_base = mysql.connector.connect(
     host="localhost",
     user="Lohries",
@@ -66,13 +67,8 @@ data_base = mysql.connector.connect(
 
 cursor = data_base.cursor()
 
-query = """
-    CREATE TABLE IF NOT EXISTS Images (
-        id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        Photo MEDIUMBLOB NOT NULL
-    )
-"""
-cursor.execute(query)
+
+cursor.execute("CREATE TABLE people ()")
 print("DataBase created !!!")
 
 i = 0
