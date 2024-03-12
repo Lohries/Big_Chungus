@@ -54,5 +54,13 @@ def data_base_analyze(data):
     return index
 
 
-def find():
-    result = DeepFace.find()
+def verify():
+    frame_CF = extraction()
+    cv.imwrite("img_find/img.jpg", frame_CF)
+    for i in enumerate(os.listdir("img")):
+        i += 1
+        results = DeepFace.verify("img_find/img.jpg", f"img/img{i}.jpg")
+        print(results["verify"])
+        if results["verify"] == True:
+            os.remove("img_find/img.jpg")
+            return i
