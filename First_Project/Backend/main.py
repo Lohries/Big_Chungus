@@ -1,38 +1,41 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from model_noDB import *
+from fastapi import FastAPI, File, UploadFile, HTTPException
+from pydantic import BaseModel
+
+import cv2 as cv
+import os 
+from Functions import *
+
 app = FastAPI()
 
-
-hosts = [
-    "https://localhost:8000" 
-]
-
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=hosts, 
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+class Data(BaseModel):
+    name: str
+    age: int
+    gender: str
+    race: str
 
 @app.get("/")
-def root():
-    return {"message": "Hello, world!"}
+async def read_root():
+    return {"message": "Welcome to the Brain Project API!"}
 
 
-@app.post("/api/storing")
-def storing():
-    pass
+@app.post("/store/")
+async def store():
+    return 
 
+@app.post("/analyze/")
+async def analyze_person(data: Data):
+    
+    frame_CF = extraction()
+    cv.imwrite("img_analyze/img.jpg", frame_CF)
+    index = data_base_analyze("img_find/img.jpg")
+    os.remove("img_find/img.jpg")
+    return {"index": index}
 
-@app.post("/api/finding")
-def finding():
-    pass
-
-
-
-@app.post("/api/analisar")
-def analisar():
-    pass
+@app.post("/verify/")
+async def verify_person(file: UploadFile = File(...)):
+   
+    with open("img_find/img.jpg", "wb") as f:
+        f.write(file.file.read())
+    
+    index = verify()
+    return {"index": index}
