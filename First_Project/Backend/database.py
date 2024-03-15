@@ -1,5 +1,9 @@
-import sqlite3
+from pymongo import MongoClient
 
-conection = sqlite3.connect('brain.db')
-cursor = conection.cursor()
+connection_string = "mongodb://admin:password@localhost:27017/?authSource=admin"
 
+client = MongoClient(connection_string)
+
+db_connection = client["meuBanco"]
+
+print(db_connection) 

@@ -18,9 +18,12 @@ def extraction(i):
         if key == ord('q'):
             print("Camera fechada")
             break
-    
+
     cv.destroyAllWindows()
     capture.release()
+    for i in range(1,5):
+        cv.waitKey(1)
+        
     
     i = i + 1
     return frame

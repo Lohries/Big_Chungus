@@ -5,7 +5,7 @@ import numpy as np
 
 
 def main():
-    image_increment = 0
+    image_increment = 15
     mathcing = 0
     st.title("Brain Project - Second Part")
     st.header("The objective of this project is to complemente the studies arround deepface, like the real time functoinalities. That's why I created my version of the world wide famous Tinder.")
@@ -27,7 +27,7 @@ def main():
             
             if st.button("Insert"):
                 image_increment += 1
-                with open (f'img/test{image_increment}.jpg','wb') as file:
+                with open (f'img/img{image_increment}.jpg','wb') as file:
                     file.write(image.getbuffer())
 
  
@@ -60,23 +60,21 @@ def main():
             feelings_2 = 55
         print(feelings_2)
         
-        feelings_3 = st.radio("Select the gender", ["Male", "Female", "Optimus Prime (Transformers)"])
+        feelings_3 = st.radio("Select the gender", ["Male", "Female"])
         if feelings_3 == "Male":
             st.write("So you like boys")
             feelings_3 = 'male'
         elif feelings_3 == "Female":
             st.write("The girls are waiting for you")
             feelings_3 = 'female'
-        else:
-            st.write("Transformers is a good series")
-            feelings_3 = 'Optimus Prime (Transformers)'
+
         print(feelings_3)
 
-        feelings_4 = st.radio("Select race", ["White", "Nigga", "Indian", "Middle East", "Asian", "Latino"])
+        feelings_4 = st.radio("Select race", ["White", "Black", "Indian", "Middle East", "Asian", "Latino"])
         if feelings_4 == "White":
             feelings_4 = 'white'
             pass
-        elif feelings_4 == "Nigga":
+        elif feelings_4 == "Black":
             feelings_4 = 'black'
             pass
         elif feelings_4 == "Indian":
@@ -90,13 +88,13 @@ def main():
         else:
             feelings_4 = 'latino hispanic'
 
-        print(feelings_4)
+        #print(feelings_4)
         
 
 
         list1 =  [feelings_1, feelings_2, feelings_3, feelings_4]
 
-        print(list1)
+        #print(list1)
 
         if st.button("Submit"):
             img_adress = data_base_analyze(list1)
