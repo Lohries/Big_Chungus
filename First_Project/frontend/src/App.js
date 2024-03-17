@@ -10,17 +10,17 @@ import Find_page from './components/pages/Find';
 
 
 function App() {
-  const apiUrl = 'http://localhost:8000'; 
+  //const apiUrl = 'http://localhost:8000'; 
 
   
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`${apiUrl}/data`);
-      console.log(response.data); 
-    } catch (error) {
-      console.error('Failed to fetch data:', error);
-    }
-  };
+  //const fetchData = async () => {
+    //try {
+      //const response = await axios.get(`${apiUrl}/data`);
+      //console.log(response.data); 
+    //} catch (error) {
+      //console.error('Failed to fetch data:', error);
+    //}
+  //};
 
 
   return (

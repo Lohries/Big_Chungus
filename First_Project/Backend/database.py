@@ -6,4 +6,6 @@ client = MongoClient(connection_string)
 
 db_connection = client["meuBanco"]
 
-print(db_connection) 
+collection = db_connection.get_collection("Mingacollection")
+
+print(collection) 

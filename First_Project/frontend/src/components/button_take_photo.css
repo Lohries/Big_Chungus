@@ -1,0 +1,19 @@
+
+button {
+    margin: 5%; 
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px; 
+    padding: 25px 50px; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicione a transição da propriedade transform */
+    margin-left: 70%;
+}
+  
+button:hover {
+    background-color: rgb(0, 138, 138);
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 5% ao passar o mouse */
+}

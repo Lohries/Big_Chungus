@@ -1,39 +1,36 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import cv2 as cv
 import os 
 from Functions import *
 
+i = 16
+
 app = FastAPI()
-i = 0
-class Data(BaseModel):
-    name: str
-    age: int
-    gender: str
-    race: str
 
 @app.get("/")
 async def read_root():
     return {"message": "Welcome to the Brain Project API!"}
 
-@app.post("/store/")
+@app.get("/store/")
 async def store():
-        
-        frame_CF = extraction(i)
-        cv.imwrite("img/img.jpg", frame_CF)
+    global i
+    frame_CF = extraction()
+    cv.imwrite(f"img/img{i}.jpg", frame_CF)
+    i += 1
+    return {"message": "Image stored successfully"}
 
-@app.post("/analyze/")
-async def analyze_person(data: Data):
-    frame_CF = extraction(0)
-    cv.imwrite("img_analyze/img.jpg", frame_CF)
-    index = data_base_analyze("img_analyze/img.jpg")
-    os.remove("img_analyze/img.jpg")
-    return {"index": index}
+@app.get("/analyze/")
+async def analyze_person():
+    global i
+    frame_AP = extraction()
+    cv.imwrite(f"img_analyze/img{i}.jpg", frame_AP)
+    lista = data_base_analyze(i)
+    os.remove(f"img_analyze/img{i}.jpg")
+    i += 1
+    return {"lista": lista}
 
-@app.post("/verify/")
-async def verify_person(file: UploadFile = File(...)):
-    with open("img_find/img.jpg", "wb") as f:
-        f.write(file.file.read())
-    
+@app.get("/verify/")
+async def verify_person():
     index = verify()
     return {"index": index}

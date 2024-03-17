@@ -2,7 +2,7 @@ import cv2 as cv
 from deepface import DeepFace
 import os 
 
-def extraction(i):
+def extraction():
     capture = cv.VideoCapture(0)
     while True:
         success, frame = capture.read()
@@ -25,36 +25,26 @@ def extraction(i):
         cv.waitKey(1)
         
     
-    i = i + 1
+
     return frame
 
 
 
-def data_base_analyze(data):
-    directory = "img"
+def data_base_analyze(i):
+  
     lista2 = []
-    for i, file in enumerate(os.listdir(directory)):
-        results = DeepFace.analyze(f"img/img{i+1}.jpg")
-        if results:
-            print("Age: ", results[0]["age"])
-            print("Gender: ", results[0]["gender"])
-            print("Emotion: ", results[0]["dominant_emotion"])
-            print("Race: ", results[0]["dominant_race"])
-            points = 0
-            if results[0]["dominant_emotion"] == data[0]:
-                points += 1
-            elif results[0]["age"] == data[1]:
-                points += 1
-            elif results[0]["gender"] == data[2]:
-                points += 1
-            elif results[0]["dominant_race"] == data[3]:
-                points += 1
-            
-            lista2.append(points)
-            print(lista2)
-    big_matching = max(lista2)
-    index = lista2.index(big_matching)
-    return index
+   
+    results = DeepFace.analyze(f"img_analyze/img{i}.jpg")
+    if results:
+        print("Age: ", results[0]["age"])
+        print("Gender: ", results[0]["gender"])
+        print("Emotion: ", results[0]["dominant_emotion"])
+        print("Race: ", results[0]["dominant_race"])
+        lista2 = [results[0]["age"], results[0]["gender"], results[0]["dominant_emotion"], results[0]["dominant_race"]]
+        print(lista2)
+ 
+
+    return lista2
 
 
 def verify():
