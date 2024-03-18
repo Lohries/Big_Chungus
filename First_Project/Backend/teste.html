@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamada da API em JavaScript</title>
+</head>
+<body>
+    <h1>Chamada da API em JavaScript</h1>
+
+    <button onclick="readRoot()">Ler raiz</button>
+    <button onclick="storeImage()">Armazenar imagem</button>
+    <button onclick="analyzePerson()">Analisar pessoa</button>
+    <button onclick="verifyPerson()">Verificar pessoa</button>
+
+    <script>
+        async function readRoot() {
+            const response = await fetch('http://localhost:8000/');
+            const data = await response.json();
+            console.log(data);
+        }
+
+        async function storeImage() {
+            const response = await fetch('http://localhost:8000/store/');
+            const data = await response.json();
+            console.log(data);
+        }
+
+        async function analyzePerson() {
+            const response = await fetch('http://localhost:8000/analyze/');
+            const data = await response.json();
+            console.log(data);
+        }
+
+        async function verifyPerson() {
+            const response = await fetch('http://localhost:8000/verify/');
+            const data = await response.json();
+            console.log(data);
+        }
+    </script>
+</body>
+</html>
