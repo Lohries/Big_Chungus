@@ -7,9 +7,8 @@ function Store_page() {
         <div>
             <Header />
        
-           
+                <button onclick="">Click Here to store</button>
              
-        
             <Footer />
         </div>
     );

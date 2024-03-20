@@ -21,14 +21,14 @@ def main():
         st.write("I'm suprised that you come so far")
 
     if x and y:
+        
+        
         image = st.camera_input("Camera Input")
 
-        if image:
-            
-            if st.button("Insert"):
-                image_increment += 1
-                with open (f'img/img{image_increment}.jpg','wb') as file:
-                    file.write(image.getbuffer())
+        if st.button("Insert"):
+            image_increment += 1
+            with open (f'img/img{image_increment}.jpg','wb') as file:
+                file.write(image.getbuffer())
 
  
 
@@ -100,6 +100,7 @@ def main():
             img_adress = data_base_analyze(list1)
     
             st.image(f'img/img{img_adress}.jpg')
+           
         
 
         

@@ -13,13 +13,13 @@ def data_base_analyze(data):
             print("Race: ", results[0]["dominant_race"])
             points = 0
             if results[0]["dominant_emotion"] == data[0]:
-                points += 1
-            elif results[0]["age"] == data[1]:
-                points += 1
-            elif results[0]["gender"] == data[2]:
-                points += 1
-            elif results[0]["dominant_race"] == data[3]:
-                points += 1
+                points = 1 + points
+            if results[0]["age"] == data[1]:
+                points = 1 + points 
+            if results[0]["gender"] == data[2]:
+                points = points + 5
+            if results[0]["dominant_race"] == data[3]:
+                points = points + 1
             
             lista2.append(points)
             print(lista2)

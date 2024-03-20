@@ -11,7 +11,8 @@ function Analyze_page() {
       <div className={styles.Display_out}>
         <p>Resultados</p>
       </div>
-      <input type="file" id="img-input-analyze" className={styles.input} />
+      <button onclick="">Click Here to analyze</button>
+      
       <Footer />
     </div>
   );

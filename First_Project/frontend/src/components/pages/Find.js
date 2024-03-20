@@ -5,7 +5,8 @@ function Find_page() {
     return (
         <div>
             <Header />
-          
+            <button onclick="">Click Here to find</button>
+
             <Footer />
         </div>
     )
