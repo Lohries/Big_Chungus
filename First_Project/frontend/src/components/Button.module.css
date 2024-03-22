@@ -10,9 +10,11 @@ button {
     font-weight: bold; 
     cursor: pointer; 
     transition: background-color 0.3s ease, transform 0.3s ease; /* Adicione a transição da propriedade transform */
+    
 }
   
 button:hover {
     background-color: rgb(0, 138, 138);
     transform: scale(1.1); /* Aumenta o tamanho do botão em 5% ao passar o mouse */
 }
+

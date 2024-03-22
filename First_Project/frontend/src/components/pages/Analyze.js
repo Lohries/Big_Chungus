@@ -11,7 +11,7 @@ function Analyze_page() {
       <div className={styles.Display_out}>
         <p>Resultados</p>
       </div>
-      <button onclick="">Click Here to analyze</button>
+      <button onclick="analyzePerson()">Click Here to analyze</button>
       
       <Footer />
     </div>

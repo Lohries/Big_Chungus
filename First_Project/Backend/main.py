@@ -1,10 +1,11 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+
 import cv2 as cv
 import os 
 from Functions import *
+from database import *
+from fastapi import FastAPI, HTTPException
 
-i = 16
+i = 0
 
 app = FastAPI()
 
@@ -16,8 +17,11 @@ async def read_root():
 async def store():
     global i
     frame_CF = extraction()
-    cv.imwrite(f"img/img{i}.jpg", frame_CF)
+    cv.imwrite(f"imgDB_help/img{i}.jpg", frame_CF)
+    storing(i)
+    os.remove(f"imgDB_help/img{i}.jpg")
     i += 1
+
     return {"message": "Image stored successfully"}
 
 @app.get("/analyze/")

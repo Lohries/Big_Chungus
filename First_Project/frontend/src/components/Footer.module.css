@@ -18,7 +18,7 @@ footer {
     margin: 5px; 
     padding: 4px;
     float: left;
-  
+    display: flex;
 
 }
 
@@ -28,4 +28,5 @@ footer {
     margin: 5px; 
     padding: 1px;
     float: right;
+    display: flex;
 }
