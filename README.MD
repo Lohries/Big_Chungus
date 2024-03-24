@@ -27,11 +27,11 @@ O Brain Projetos consiste em dois projetos desenvolvidos durante o período de v
 ## Rodar (1)
 1. Tenha node instalado no computador.
 2. Start o react por npm.
-3. Dentro da pasta que contém os arquivos, use o comando npm start.
+3. Dentro da pasta que contém os arquivos, use o comando `npm start`.
 
 ## Rodar (2)
 1. Tenha streamlit instalado no computador.
-2. Digite streamlit runserver Interface.py.
+2. Digite `streamlit runserver Interface.py`.
 3. Esteja dentro da pasta Second_Project.
 
 
@@ -68,11 +68,11 @@ The Brain Projects consist of two projects developed during the volunteering per
 ## Run (1)
 1. Have Node.js installed on your computer.
 2. Start React via npm.
-3. Inside the folder containing the files, use the command npm start.
+3. Inside the folder containing the files, use the command `npm start`.
 
 ## Run (2)
 1. Have Streamlit installed on your computer.
-2. Type `streamlit run server Interface.py`.
+2. Type `streamlit runserver Interface.py`.
 3. Be inside the Second_Project folder.
 
 ## How to Contribute
