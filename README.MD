@@ -1,6 +1,6 @@
 # Brain Projetos (1 & 2)
 
-# PT/BR
+**PT/BR**
 
 ## Descrição
 O Brain Projetos consiste em dois projetos desenvolvidos durante o período de voluntariado no Brain. Eles são destinados à criação de uma aplicação que permite a detecção de emoções do usuário, o cadastro de sua face em um banco de dados e uma posterior verificação da face com os dados extraídos.
@@ -41,7 +41,7 @@ Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas 
 ## Licença
 Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
 
-## EN
+**EN**
 
 ## Description
 The Brain Projects consist of two projects developed during the volunteering period at Brain. They are aimed at creating an application that allows the detection of user emotions, the registration of their face in a database, and subsequent verification of the face with the extracted data.
