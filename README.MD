@@ -22,10 +22,16 @@ O Brain Projetos consiste em dois projetos desenvolvidos durante o período de v
 5. Inicie o servidor frontend.
 6. Acesse a aplicação no navegador.
 
-##Rodar
-1. Tenha node instalado no computador
-2. Start o react por npm
-3. Dentro da pasta que contém os arquivos, use o comando npm start
+## Rodar (1)
+1. Tenha node instalado no computador.
+2. Start o react por npm.
+3. Dentro da pasta que contém os arquivos, use o comando npm start.
+
+## Rodar (2)
+1. Tenha streamlit instalado no computador.
+2. Digite streamlit runserver Interface.py.
+3. Esteja dentro da pasta Second_Project.
+
 
 ## Como Contribuir
 Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Basta abrir uma issue ou enviar um pull request.
